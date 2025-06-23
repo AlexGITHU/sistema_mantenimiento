@@ -6,16 +6,10 @@ create table usuarios(
 id_usuarios int auto_increment,
 nombre varchar(50),
 apellido varchar(50),
+rol varchar(255),
 contrasenia text(50),
 fechaCaptura date,
 primary key(id_usuarios) 
-);
-
-create table roles(
-id_roles int auto_increment,
-id_usuarios int not null,
-nombreRol varchar(50),
-primary key(id_roles)
 );
 
 create table tareas(
@@ -38,3 +32,5 @@ entrada int,
 salida int,
 primary key(id_inventario)
 );
+
+insert into `usuarios` (`nombre`, `apellido`, `rol`, `contrasenia`) values ('admin', 'admin', 'Administrador', 'password'), ('gen', 'gen', 'General', '00001'), ('obv', 'obv', 'Observador', '12345');
